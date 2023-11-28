@@ -1,5 +1,8 @@
 using System.ComponentModel.DataAnnotations;
 using System.Xml.Serialization;
+using Home_library.Implementations;
+using Home_library.Interfaces;
+using Home_library.Models;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Home_library
@@ -84,7 +87,8 @@ namespace Home_library
             var username = TextUsername.Text;
             var password = TextPassword.Text;
 
-            var users = User.LoadUsers();
+            IManager<User> manager = new UserManager();
+            var users = manager.Load("users.xml");
 
             foreach (var user in users)
             {
@@ -103,29 +107,22 @@ namespace Home_library
         {
             var newUser = new User(TextUsername.Text, TextPassword.Text);
 
-            if (!newUser.IsValid())
-            {
-                ReturnUser("Invalid username or password");
+            IManager<User> manager = new UserManager();
+            var users = manager.Load("users.xml");
 
+            IValidator<User> validator = new UserValidator();
+
+            var validationResult = validator.Validate(users, newUser);
+            ReturnUser(validationResult.Item2);
+            if (!validationResult.Item1)
+            {
                 return;
             }
 
-            var users = User.LoadUsers();
-
-            foreach (var user in users)
-            {
-                if (user.Username == newUser.Username)
-                {
-                    ReturnUser("This username has been already taken!");
-
-                    return;
-                }
-            }
-
-            ReturnUser("You have successfully sign up!");
+            
 
             users.Add(newUser);
-            User.SaveUsers(users);
+            manager.Save(users);
         }
 
         private void PasswordVisible_Click(object sender, EventArgs e)

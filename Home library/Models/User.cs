@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Xml.Serialization;
 
-namespace Home_library;
+namespace Home_library.Models;
 
 [Serializable]
 public class User
@@ -28,20 +28,5 @@ public class User
         if (string.IsNullOrWhiteSpace(Password)) return false;
 
         return true;
-    }
-
-    public static void SaveUsers(List<User> users)
-    {
-        var serializer = new XmlSerializer(typeof(List<User>));
-        using var stream = File.Create("users.xml");
-        serializer.Serialize(stream, users);
-    }
-
-    public static List<User> LoadUsers()
-    {
-        var serializer = new XmlSerializer(typeof(List<User>));
-
-        using var stream = File.OpenRead("users.xml");
-        return (List<User>)serializer.Deserialize(stream);
     }
 }
