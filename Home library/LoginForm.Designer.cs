@@ -41,14 +41,14 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.signUpButton = new System.Windows.Forms.Button();
-            this.logInButton = new System.Windows.Forms.Button();
-            this.closeButton = new System.Windows.Forms.Button();
-            this.passwordVisible = new System.Windows.Forms.PictureBox();
-            this.passwordInvisible = new System.Windows.Forms.PictureBox();
-            this.textUsername = new System.Windows.Forms.TextBox();
-            this.textPassword = new System.Windows.Forms.TextBox();
-            this.textMessage = new System.Windows.Forms.TextBox();
+            this.SignUpButton = new System.Windows.Forms.Button();
+            this.LogInButton = new System.Windows.Forms.Button();
+            this.CloseButton = new System.Windows.Forms.Button();
+            this.PasswordVisible = new System.Windows.Forms.PictureBox();
+            this.PasswordInvisible = new System.Windows.Forms.PictureBox();
+            this.TextUsername = new System.Windows.Forms.TextBox();
+            this.TextPassword = new System.Windows.Forms.TextBox();
+            this.TextMessage = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.userIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.loadingGif)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usernameIcon)).BeginInit();
@@ -57,8 +57,8 @@
             this.panel3.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.passwordVisible)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.passwordInvisible)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PasswordVisible)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PasswordInvisible)).BeginInit();
             this.SuspendLayout();
             // 
             // userIcon
@@ -171,105 +171,105 @@
             this.panel9.Size = new System.Drawing.Size(200, 2);
             this.panel9.TabIndex = 7;
             // 
-            // signUpButton
+            // SignUpButton
             // 
-            this.signUpButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.signUpButton.FlatAppearance.BorderSize = 3;
-            this.signUpButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.signUpButton.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.signUpButton.Location = new System.Drawing.Point(87, 376);
-            this.signUpButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.signUpButton.Name = "signUpButton";
-            this.signUpButton.Size = new System.Drawing.Size(175, 40);
-            this.signUpButton.TabIndex = 11;
-            this.signUpButton.Text = "Sign up";
-            this.signUpButton.UseVisualStyleBackColor = true;
-            this.signUpButton.Click += new System.EventHandler(this.signUpButton_Click);
+            this.SignUpButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.SignUpButton.FlatAppearance.BorderSize = 3;
+            this.SignUpButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SignUpButton.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.SignUpButton.Location = new System.Drawing.Point(87, 376);
+            this.SignUpButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.SignUpButton.Name = "SignUpButton";
+            this.SignUpButton.Size = new System.Drawing.Size(175, 40);
+            this.SignUpButton.TabIndex = 11;
+            this.SignUpButton.Text = "Sign up";
+            this.SignUpButton.UseVisualStyleBackColor = true;
+            this.SignUpButton.Click += new System.EventHandler(this.SignUpButton_Click);
             // 
-            // logInButton
+            // LogInButton
             // 
-            this.logInButton.BackColor = System.Drawing.Color.Cyan;
-            this.logInButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.logInButton.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.logInButton.Location = new System.Drawing.Point(87, 323);
-            this.logInButton.Name = "logInButton";
-            this.logInButton.Size = new System.Drawing.Size(175, 40);
-            this.logInButton.TabIndex = 12;
-            this.logInButton.Text = "Log in";
-            this.logInButton.UseVisualStyleBackColor = false;
-            this.logInButton.Click += new System.EventHandler(this.logInButton_Click);
+            this.LogInButton.BackColor = System.Drawing.Color.Cyan;
+            this.LogInButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.LogInButton.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.LogInButton.Location = new System.Drawing.Point(87, 323);
+            this.LogInButton.Name = "LogInButton";
+            this.LogInButton.Size = new System.Drawing.Size(175, 40);
+            this.LogInButton.TabIndex = 12;
+            this.LogInButton.Text = "Log in";
+            this.LogInButton.UseVisualStyleBackColor = false;
+            this.LogInButton.Click += new System.EventHandler(this.LogInButton_Click);
             // 
-            // closeButton
+            // CloseButton
             // 
-            this.closeButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("closeButton.BackgroundImage")));
-            this.closeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.closeButton.FlatAppearance.BorderSize = 0;
-            this.closeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.closeButton.Location = new System.Drawing.Point(318, 12);
-            this.closeButton.Name = "closeButton";
-            this.closeButton.Size = new System.Drawing.Size(20, 20);
-            this.closeButton.TabIndex = 13;
-            this.closeButton.UseVisualStyleBackColor = true;
-            this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
+            this.CloseButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("CloseButton.BackgroundImage")));
+            this.CloseButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.CloseButton.FlatAppearance.BorderSize = 0;
+            this.CloseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CloseButton.Location = new System.Drawing.Point(318, 12);
+            this.CloseButton.Name = "CloseButton";
+            this.CloseButton.Size = new System.Drawing.Size(20, 20);
+            this.CloseButton.TabIndex = 13;
+            this.CloseButton.UseVisualStyleBackColor = true;
+            this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
             // 
-            // passwordVisible
+            // PasswordVisible
             // 
-            this.passwordVisible.Image = ((System.Drawing.Image)(resources.GetObject("passwordVisible.Image")));
-            this.passwordVisible.Location = new System.Drawing.Point(252, 277);
-            this.passwordVisible.Name = "passwordVisible";
-            this.passwordVisible.Size = new System.Drawing.Size(20, 20);
-            this.passwordVisible.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.passwordVisible.TabIndex = 14;
-            this.passwordVisible.TabStop = false;
-            this.passwordVisible.Click += new System.EventHandler(this.passwordVisible_Click);
+            this.PasswordVisible.Image = ((System.Drawing.Image)(resources.GetObject("PasswordVisible.Image")));
+            this.PasswordVisible.Location = new System.Drawing.Point(252, 277);
+            this.PasswordVisible.Name = "PasswordVisible";
+            this.PasswordVisible.Size = new System.Drawing.Size(20, 20);
+            this.PasswordVisible.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PasswordVisible.TabIndex = 14;
+            this.PasswordVisible.TabStop = false;
+            this.PasswordVisible.Click += new System.EventHandler(this.PasswordVisible_Click);
             // 
-            // passwordInvisible
+            // PasswordInvisible
             // 
-            this.passwordInvisible.Image = ((System.Drawing.Image)(resources.GetObject("passwordInvisible.Image")));
-            this.passwordInvisible.Location = new System.Drawing.Point(254, 279);
-            this.passwordInvisible.Name = "passwordInvisible";
-            this.passwordInvisible.Size = new System.Drawing.Size(17, 17);
-            this.passwordInvisible.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.passwordInvisible.TabIndex = 15;
-            this.passwordInvisible.TabStop = false;
-            this.passwordInvisible.Click += new System.EventHandler(this.passwordInvisible_Click);
+            this.PasswordInvisible.Image = ((System.Drawing.Image)(resources.GetObject("PasswordInvisible.Image")));
+            this.PasswordInvisible.Location = new System.Drawing.Point(254, 279);
+            this.PasswordInvisible.Name = "PasswordInvisible";
+            this.PasswordInvisible.Size = new System.Drawing.Size(17, 17);
+            this.PasswordInvisible.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PasswordInvisible.TabIndex = 15;
+            this.PasswordInvisible.TabStop = false;
+            this.PasswordInvisible.Click += new System.EventHandler(this.PasswordInvisible_Click);
             // 
-            // textUsername
+            // TextUsername
             // 
-            this.textUsername.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.textUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textUsername.Font = new System.Drawing.Font("Segoe Print", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textUsername.HideSelection = false;
-            this.textUsername.Location = new System.Drawing.Point(75, 213);
-            this.textUsername.Name = "textUsername";
-            this.textUsername.Size = new System.Drawing.Size(200, 22);
-            this.textUsername.TabIndex = 17;
-            this.textUsername.Text = "Username";
-            this.textUsername.MouseClick += new System.Windows.Forms.MouseEventHandler(this.textUsername_MouseClick);
+            this.TextUsername.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.TextUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TextUsername.Font = new System.Drawing.Font("Segoe Print", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.TextUsername.HideSelection = false;
+            this.TextUsername.Location = new System.Drawing.Point(75, 213);
+            this.TextUsername.Name = "TextUsername";
+            this.TextUsername.Size = new System.Drawing.Size(200, 22);
+            this.TextUsername.TabIndex = 17;
+            this.TextUsername.Text = "Username";
+            this.TextUsername.MouseClick += new System.Windows.Forms.MouseEventHandler(this.TextUsername_MouseClick);
             // 
-            // textPassword
+            // TextPassword
             // 
-            this.textPassword.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.textPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textPassword.Font = new System.Drawing.Font("Segoe Print", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textPassword.Location = new System.Drawing.Point(75, 280);
-            this.textPassword.Name = "textPassword";
-            this.textPassword.Size = new System.Drawing.Size(200, 22);
-            this.textPassword.TabIndex = 18;
-            this.textPassword.Text = "Password";
-            this.textPassword.MouseClick += new System.Windows.Forms.MouseEventHandler(this.textPassword_MouseClick);
+            this.TextPassword.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.TextPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TextPassword.Font = new System.Drawing.Font("Segoe Print", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.TextPassword.Location = new System.Drawing.Point(75, 280);
+            this.TextPassword.Name = "TextPassword";
+            this.TextPassword.Size = new System.Drawing.Size(200, 22);
+            this.TextPassword.TabIndex = 18;
+            this.TextPassword.Text = "Password";
+            this.TextPassword.MouseClick += new System.Windows.Forms.MouseEventHandler(this.TextPassword_MouseClick);
             // 
-            // textMessage
+            // TextMessage
             // 
-            this.textMessage.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.textMessage.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textMessage.Enabled = false;
-            this.textMessage.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textMessage.ForeColor = System.Drawing.Color.LightGoldenrodYellow;
-            this.textMessage.Location = new System.Drawing.Point(75, 305);
-            this.textMessage.Name = "textMessage";
-            this.textMessage.Size = new System.Drawing.Size(263, 15);
-            this.textMessage.TabIndex = 19;
+            this.TextMessage.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.TextMessage.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TextMessage.Enabled = false;
+            this.TextMessage.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.TextMessage.ForeColor = System.Drawing.Color.LightGoldenrodYellow;
+            this.TextMessage.Location = new System.Drawing.Point(75, 305);
+            this.TextMessage.Name = "TextMessage";
+            this.TextMessage.Size = new System.Drawing.Size(263, 15);
+            this.TextMessage.TabIndex = 19;
             // 
             // LoginForm
             // 
@@ -277,20 +277,20 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateGray;
             this.ClientSize = new System.Drawing.Size(350, 500);
-            this.Controls.Add(this.textMessage);
-            this.Controls.Add(this.textUsername);
-            this.Controls.Add(this.passwordInvisible);
-            this.Controls.Add(this.passwordVisible);
-            this.Controls.Add(this.closeButton);
-            this.Controls.Add(this.logInButton);
-            this.Controls.Add(this.signUpButton);
+            this.Controls.Add(this.TextMessage);
+            this.Controls.Add(this.TextUsername);
+            this.Controls.Add(this.PasswordInvisible);
+            this.Controls.Add(this.PasswordVisible);
+            this.Controls.Add(this.CloseButton);
+            this.Controls.Add(this.LogInButton);
+            this.Controls.Add(this.SignUpButton);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.passwordIcon);
             this.Controls.Add(this.usernameIcon);
             this.Controls.Add(this.userIcon);
             this.Controls.Add(this.loadingGif);
-            this.Controls.Add(this.textPassword);
+            this.Controls.Add(this.TextPassword);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -304,8 +304,8 @@
             this.panel3.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.passwordVisible)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.passwordInvisible)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PasswordVisible)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PasswordInvisible)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -325,13 +325,13 @@
         private Panel panel7;
         private Panel panel8;
         private Panel panel9;
-        private Button signUpButton;
-        private Button logInButton;
-        private Button closeButton;
-        private PictureBox passwordVisible;
-        private PictureBox passwordInvisible;
-        private TextBox textUsername;
-        private TextBox textPassword;
-        private TextBox textMessage;
+        private Button SignUpButton;
+        private Button LogInButton;
+        private Button CloseButton;
+        private PictureBox PasswordVisible;
+        private PictureBox PasswordInvisible;
+        private TextBox TextUsername;
+        private TextBox TextPassword;
+        private TextBox TextMessage;
     }
 }

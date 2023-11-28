@@ -935,7 +935,7 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAACAG/jkk/8DomZRlh3aLy0AAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="closeButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="CloseButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAUAAAAFACAYAAADNkKWqAAAABGdBTUEAALGPC/xhBQAAGDJJREFUeF7t
         nQ/ktuXZx/OaJMkkSZIkSZIkSTJJkmRmZmZmZmYyySSTJCZJkkkmM6+Zeb0mmUySJEmSJEmSJMnMTJIk
@@ -1044,7 +1044,7 @@
         iEyXk076f3Pk+ufXOMnEAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="passwordVisible.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="PasswordVisible.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAYAAACtWK6eAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
         DAAACwwBP0AiyAAADIhJREFUeF7tnQesLVUVhp8FewXsKCICFuwaW0SFAKJIRI0FC4JGsYSIJaISjEax
@@ -1104,7 +1104,7 @@
         YII=
 </value>
   </data>
-  <data name="passwordInvisible.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="PasswordInvisible.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAD
         rwAAA68BGB6xfQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAlJSURBVHhe7Z13

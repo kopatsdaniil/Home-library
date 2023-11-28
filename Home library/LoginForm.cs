@@ -1,140 +1,164 @@
 using System.ComponentModel.DataAnnotations;
-using System.IO;
-using System.Runtime.Serialization;
-using System.Runtime.Serialization.Json;
+using System.Xml.Serialization;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Home_library
 {
     public partial class LoginForm : Form
     {
-        public DataContractJsonSerializer serializer = new DataContractJsonSerializer(typeof(User));
-
         public LoginForm()
         {
             InitializeComponent();
 
-            passwordVisible.Visible = false;
-            passwordInvisible.Visible = false;
+            PasswordVisible.Visible = false;
+            PasswordInvisible.Visible = false;
         }
 
         private void VisibilityIcon(bool argument)
         {
             if (argument)
             {
-                passwordInvisible.Visible = true;
-                passwordVisible.Visible = true;
+                PasswordInvisible.Visible = true;
+                PasswordVisible.Visible = true;
             }
 
             else
             {
-                passwordVisible.Visible = false;
-                passwordInvisible.Visible = false;
+                PasswordVisible.Visible = false;
+                PasswordInvisible.Visible = false;
             }
+        }
+
+        private void ReturnUser(string message)
+        {
+            TextMessage.Text = message;
+            TextPassword.Text = "Password";
+            TextUsername.Text = "Username";
+            TextPassword.PasswordChar = '\0';
         }
             
         private void LoginForm_Load(object sender, EventArgs e)
         {
-            
-            
+
         }
 
-        private void textUsername_MouseClick(object sender, MouseEventArgs e)
+        private void TextUsername_MouseClick(object sender, MouseEventArgs e)
         {
-            if (textUsername.Text == "Username")
+            if (TextUsername.Text == "Username")
             {
-                textUsername.Clear();
+                TextUsername.Clear();
             }
 
-            if (String.IsNullOrEmpty(textPassword.Text))
+            if (string.IsNullOrEmpty(TextPassword.Text))
             {
-                textPassword.Text = "Password";
-                textPassword.PasswordChar = '\0';
+                TextPassword.Text = "Password";
+                TextPassword.PasswordChar = '\0';
                 VisibilityIcon(false);
             }
         }
 
-        private void textPassword_MouseClick(object sender, MouseEventArgs e)
+        private void TextPassword_MouseClick(object sender, MouseEventArgs e)
         {
-            if (textPassword.Text == "Password")
+            if (TextPassword.Text == "Password")
             {
-                textPassword.Clear();
-                textPassword.PasswordChar = '*';
+                TextPassword.Clear();
+                TextPassword.PasswordChar = '*';
             }
 
-            if (String.IsNullOrEmpty(textUsername.Text))
+            if (string.IsNullOrEmpty(TextUsername.Text))
             {
-                textUsername.Text = "Username";
+                TextUsername.Text = "Username";
                 VisibilityIcon(true);
             }
 
             VisibilityIcon(true);
         }
 
-        private void closeButton_Click(object sender, EventArgs e)
+        private void CloseButton_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void logInButton_Click(object sender, EventArgs e)
+        private void LogInButton_Click(object sender, EventArgs e)
         {
-            MemoryStream stream = new MemoryStream();
-            StreamReader reader = new StreamReader(stream);
+            var username = TextUsername.Text;
+            var password = TextPassword.Text;
 
-            string serialization;
-            serialization = reader.ReadToEnd();
-            stream.Position = 0;
-            User users = (User)serializer.ReadObject(stream);
-        }
+            var users = LoadUsers();
 
-
-    private void signUpButton_Click(object sender, EventArgs e)
-        {
-            string username = textUsername.Text;
-            string password = textPassword.Text;
-
-            User new_user = new User(username, password);
-
-            if (!new_user.Validate())
+            foreach (var user in users)
             {
-                textMessage.Text = "Invalid user data. Please try again";
-                textPassword.Text = "Password";
-                textUsername.Text = "Username";
-                textPassword.PasswordChar = '\0';
-                VisibilityIcon(false);
-            }
-
-            else
-            {
-                using (MemoryStream stream = new MemoryStream())
+                if (user.Username == username && user.Password == password)
                 {
-                    serializer.WriteObject(stream, new_user);
+                    this.Close();
                 }
-
-                textMessage.Text = "You have successfully sign up!";
-                textPassword.Text = "Password";
-                textUsername.Text = "Username";
-                textPassword.PasswordChar = '\0';
             }
+
+            ReturnUser("Username or password are incorrect!");
         }
 
-        private void passwordVisible_Click(object sender, EventArgs e)
+        private static List<User> LoadUsers()
         {
-            if(textPassword.Text != "Password")
-            {
-                textPassword.PasswordChar = '*';
-            }
+            var serializer = new XmlSerializer(typeof(List<User>));
 
-            passwordInvisible.BringToFront();
+            using var stream = File.OpenRead("users.xml");
+            return (List<User>)serializer.Deserialize(stream);
         }
 
-        private void passwordInvisible_Click(object sender, EventArgs e)
+        private void SignUpButton_Click(object sender, EventArgs e)
         {
-            if (textPassword.Text != "Password")
+            var newUser = new User(TextUsername.Text, TextPassword.Text);
+
+            if (!newUser.IsValid())
             {
-                textPassword.PasswordChar = '\0';
+                ReturnUser("Invalid username or password");
+
+                return;
             }
 
-            passwordVisible.BringToFront();
+            var users = LoadUsers();
+
+            foreach (var user in users)
+            {
+                if (user.Username == newUser.Username)
+                {
+                    ReturnUser("This username has been already taken!");
+
+                    return;
+                }
+            }
+
+            ReturnUser("You have successfully sign up!");
+
+            users.Add(newUser);
+            SaveUsers(users);
+        }
+
+        public static void SaveUsers(List<User> users)
+        {
+            var serializer = new XmlSerializer(typeof(List<User>));
+            using var stream = File.Create("users.xml");
+            serializer.Serialize(stream, users);
+        }
+
+        private void PasswordVisible_Click(object sender, EventArgs e)
+        {
+            if(TextPassword.Text != "Password")
+            {
+                TextPassword.PasswordChar = '*';
+            }
+
+            PasswordInvisible.BringToFront();
+        }
+
+        private void PasswordInvisible_Click(object sender, EventArgs e)
+        {
+            if (TextPassword.Text != "Password")
+            {
+                TextPassword.PasswordChar = '\0';
+            }
+
+            PasswordVisible.BringToFront();
         }
     }
 
@@ -155,14 +179,14 @@ namespace Home_library
             Password = password;
         }
 
-        public bool Validate()
+        public User() { }
+
+        public bool IsValid()
         {
-            var isValid = true;
+            if (string.IsNullOrWhiteSpace(Username)) return false;
+            if (string.IsNullOrWhiteSpace(Password)) return false;
 
-            if (string.IsNullOrWhiteSpace(Username)) isValid = false;
-            if (string.IsNullOrWhiteSpace(Password)) isValid = false;
-
-            return isValid;
+            return true;
         }
     }
 }
