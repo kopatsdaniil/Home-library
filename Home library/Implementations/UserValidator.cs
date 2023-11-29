@@ -5,20 +5,14 @@ namespace Home_library.Implementations;
 
 public class UserValidator : IValidator<User>
 {
-    public (bool, string) Validate(IList<User> users, User user)
+    public ValidationResult Validate(IList<User> users, User user)
     {
-        if (!user.IsValid())
-        {
-            return (false, "Invalid username or password");
-        }
+        if (!user.IsValid()) return new ValidationResult(false, "Invalid username or password");
 
         var foundUser = users.FirstOrDefault(x => x.Username == user.Username);
 
-        if (foundUser != null)
-        {
-            return (false, "This username has been already taken!");
-        }
+        if (foundUser != null) return new ValidationResult(false, "This username has been already taken!");
 
-        return (true, "You have successfully sign up!");
+        return new ValidationResult(true, "You have successfully sign up!");
     }
 }

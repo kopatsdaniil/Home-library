@@ -1,148 +1,147 @@
-using System.ComponentModel.DataAnnotations;
-using System.Xml.Serialization;
-using Home_library.Implementations;
 using Home_library.Interfaces;
 using Home_library.Models;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.VisualBasic.Devices;
 
-namespace Home_library
+namespace Home_library;
+
+public partial class LoginForm : Form
 {
-    public partial class LoginForm : Form
-    {
-        public LoginForm()
-        {
-            InitializeComponent();
+    private readonly IServiceProvider _provider;
+    private readonly IManager<User> _userManager;
+    private readonly IValidator<User> _userValidator;
 
+    public LoginForm(IManager<User> userManager, IValidator<User> userValidator, IServiceProvider provider)
+    {
+        InitializeComponent();
+
+        PasswordVisible.Visible = false;
+        PasswordInvisible.Visible = false;
+
+        _userManager = userManager;
+        _userValidator = userValidator;
+        _provider = provider;
+    }
+
+    private void SetVisibilityIcon(bool argument)
+    {
+        if (argument)
+        {
+            PasswordInvisible.Visible = true;
+            PasswordVisible.Visible = true;
+        }
+
+        else
+        {
             PasswordVisible.Visible = false;
             PasswordInvisible.Visible = false;
         }
+    }
 
-        private void VisibilityIcon(bool argument)
+    private void ResetUserInformation(string message)
+    {
+        TextMessage.Text = message;
+        TextPassword.Text = "Password";
+        TextUsername.Text = "Username";
+        TextPassword.PasswordChar = '\0';
+    }
+
+    private void LoginForm_Load(object sender, EventArgs e)
+    {
+    }
+
+    private void TextUsername_MouseClick(object sender, MouseEventArgs e)
+    {
+        if (TextUsername.Text == "Username") TextUsername.Clear();
+
+        if (string.IsNullOrEmpty(TextPassword.Text))
         {
-            if (argument)
-            {
-                PasswordInvisible.Visible = true;
-                PasswordVisible.Visible = true;
-            }
-
-            else
-            {
-                PasswordVisible.Visible = false;
-                PasswordInvisible.Visible = false;
-            }
-        }
-
-        private void ReturnUser(string message)
-        {
-            TextMessage.Text = message;
             TextPassword.Text = "Password";
-            TextUsername.Text = "Username";
             TextPassword.PasswordChar = '\0';
+            SetVisibilityIcon(false);
         }
-            
-        private void LoginForm_Load(object sender, EventArgs e)
+    }
+
+    private void TextPassword_MouseClick(object sender, MouseEventArgs e)
+    {
+        if (TextPassword.Text == "Password")
         {
-
+            TextPassword.Clear();
+            TextPassword.PasswordChar = '*';
         }
 
-        private void TextUsername_MouseClick(object sender, MouseEventArgs e)
+        if (string.IsNullOrEmpty(TextUsername.Text))
         {
-            if (TextUsername.Text == "Username")
-            {
-                TextUsername.Clear();
-            }
-
-            if (string.IsNullOrEmpty(TextPassword.Text))
-            {
-                TextPassword.Text = "Password";
-                TextPassword.PasswordChar = '\0';
-                VisibilityIcon(false);
-            }
+            TextUsername.Text = "Username";
+            SetVisibilityIcon(true);
         }
 
-        private void TextPassword_MouseClick(object sender, MouseEventArgs e)
-        {
-            if (TextPassword.Text == "Password")
-            {
-                TextPassword.Clear();
-                TextPassword.PasswordChar = '*';
-            }
-
-            if (string.IsNullOrEmpty(TextUsername.Text))
-            {
-                TextUsername.Text = "Username";
-                VisibilityIcon(true);
-            }
-
-            VisibilityIcon(true);
-        }
-
-        private void CloseButton_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void LogInButton_Click(object sender, EventArgs e)
-        {
-            var username = TextUsername.Text;
-            var password = TextPassword.Text;
-
-            IManager<User> manager = new UserManager();
-            var users = manager.Load("users.xml");
-
-            foreach (var user in users)
-            {
-                if (user.Username == username && user.Password == password)
-                {
-                    this.Close();
-                }
-            }
-
-            ReturnUser("Username or password are incorrect!");
-        }
+        SetVisibilityIcon(true);
 
         
+    }
 
-        private void SignUpButton_Click(object sender, EventArgs e)
-        {
-            var newUser = new User(TextUsername.Text, TextPassword.Text);
+    private void CloseButton_Click(object sender, EventArgs e)
+    {
+        Close();
+    }
 
-            IManager<User> manager = new UserManager();
-            var users = manager.Load("users.xml");
+    private void LogInButton_Click(object sender, EventArgs? e)
+    {
+        var username = TextUsername.Text;
+        var password = TextPassword.Text;
 
-            IValidator<User> validator = new UserValidator();
+        var users = _userManager.Load();
 
-            var validationResult = validator.Validate(users, newUser);
-            ReturnUser(validationResult.Item2);
-            if (!validationResult.Item1)
+        foreach (var user in users)
+            if (user.Username == username && user.Password == password)
             {
-                return;
+                var dashboard = _provider.GetRequiredService<DashboardForm>();
+                dashboard.Show();
+
+                Hide();
             }
 
-            
+        ResetUserInformation("Username or password are incorrect!");
+    }
 
-            users.Add(newUser);
-            manager.Save(users);
-        }
 
-        private void PasswordVisible_Click(object sender, EventArgs e)
+    private void SignUpButton_Click(object sender, EventArgs e)
+    {
+        var newUser = new User(TextUsername.Text, TextPassword.Text);
+
+        var users = _userManager.Load();
+
+        var validationResult = _userValidator.Validate(users, newUser);
+
+        ResetUserInformation(validationResult.Message);
+
+        if (!validationResult.Success) return;
+
+        users.Add(newUser);
+
+        _userManager.Save(users);
+    }
+
+    private void PasswordVisible_Click(object sender, EventArgs e)
+    {
+        if (TextPassword.Text != "Password") TextPassword.PasswordChar = '*';
+
+        PasswordInvisible.BringToFront();
+    }
+
+    private void PasswordInvisible_Click(object sender, EventArgs e)
+    {
+        if (TextPassword.Text != "Password") TextPassword.PasswordChar = '\0';
+        
+        PasswordVisible.BringToFront();
+    }
+
+    private void LoginForm_KeyDown(object sender, KeyEventArgs e)
+    {
+        if (e.KeyValue == (char)Keys.Enter)
         {
-            if(TextPassword.Text != "Password")
-            {
-                TextPassword.PasswordChar = '*';
-            }
-
-            PasswordInvisible.BringToFront();
-        }
-
-        private void PasswordInvisible_Click(object sender, EventArgs e)
-        {
-            if (TextPassword.Text != "Password")
-            {
-                TextPassword.PasswordChar = '\0';
-            }
-
-            PasswordVisible.BringToFront();
+            LogInButton.PerformClick();
         }
     }
 }

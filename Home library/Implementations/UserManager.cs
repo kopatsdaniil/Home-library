@@ -1,18 +1,18 @@
-﻿using Home_library.Interfaces;
+﻿using System.Xml.Serialization;
+using Home_library.Interfaces;
 using Home_library.Models;
-using Microsoft.VisualBasic.ApplicationServices;
-using System.Xml.Serialization;
-using User = Home_library.Models.User;
 
 namespace Home_library.Implementations;
 
 public class UserManager : IManager<User>
 {
-    public IList<User> Load(string filename)
+    private const string FILENAME = "users.xml";
+
+    public IList<User> Load()
     {
         var serializer = new XmlSerializer(typeof(List<User>));
 
-        using var stream = File.OpenRead(filename);
+        using var stream = File.OpenRead(FILENAME);
         return (List<User>)serializer.Deserialize(stream);
     }
 
@@ -20,7 +20,7 @@ public class UserManager : IManager<User>
     {
         var serializer = new XmlSerializer(typeof(List<User>));
 
-        using var stream = File.Create("users.xml");
+        using var stream = File.Create(FILENAME);
         serializer.Serialize(stream, entities);
     }
 }

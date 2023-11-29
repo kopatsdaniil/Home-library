@@ -1,6 +1,8 @@
-﻿namespace Home_library.Interfaces;
+﻿using Home_library.Models;
+
+namespace Home_library.Interfaces;
 
 public interface IValidator<T> where T : class
 {
-    public (bool, string) Validate(IList<T> users, T user);
+    public ValidationResult Validate(IList<T> users, T user);
 }
