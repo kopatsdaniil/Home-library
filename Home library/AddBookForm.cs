@@ -1,5 +1,6 @@
 ﻿using Home_library.Interfaces;
 using Home_library.Models.Book;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Home_library;
 
@@ -7,8 +8,9 @@ public partial class AddBookForm : Form
 {
     private readonly IManager<Book> _bookManager;
     private readonly IValidator<Book> _bookValidator;
+    private readonly IServiceProvider _provider;
 
-    public AddBookForm(IManager<Book> bookManager, IValidator<Book> bookValidator)
+    public AddBookForm(IManager<Book> bookManager, IValidator<Book> bookValidator, IServiceProvider provider)
     {
         InitializeComponent();
 
@@ -17,6 +19,7 @@ public partial class AddBookForm : Form
 
         _bookManager = bookManager;
         _bookValidator = bookValidator;
+        _provider = provider;
     }
 
     private void UploadImageButton_Click(object sender, EventArgs e)
@@ -51,6 +54,8 @@ public partial class AddBookForm : Form
 
     private void CancelButton_Click(object sender, EventArgs e)
     {
-        Close();
+        var dashboard = _provider.GetRequiredService<DashboardForm>();
+        dashboard.RefreshBooksBox();
+        dashboard.Show();
     }
 }
