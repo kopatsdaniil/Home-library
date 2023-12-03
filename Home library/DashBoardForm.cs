@@ -1,8 +1,12 @@
-﻿using System.Security.Cryptography.X509Certificates;
+﻿using System;
+using System.Security.Cryptography.X509Certificates;
 using System.Windows.Forms;
+using Home_library.Implementations;
 using Home_library.Interfaces;
 using Home_library.Models.Book;
 using Microsoft.Extensions.DependencyInjection;
+using static System.Reflection.Metadata.BlobBuilder;
+using static System.Windows.Forms.DataFormats;
 
 namespace Home_library;
 
@@ -10,18 +14,20 @@ public partial class DashboardForm : Form
 {
     private readonly IServiceProvider _provider;
     private readonly IManager<Book> _booksManager;
+    private readonly BookEditor _bookEditor;
 
-    public DashboardForm(IServiceProvider provider, IManager<Book> booksManager)
+    public DashboardForm(IServiceProvider provider, IManager<Book> booksManager, BookEditor bookEditor)   
     {
         InitializeComponent();
 
         _provider = provider;
         _booksManager = booksManager;
+        _bookEditor = bookEditor;
 
         RefreshBooksBox();
     }
 
-    public void RefreshBooksBox()
+    private void RefreshBooksBox()
     {
         booksBox.DataSource = _booksManager.Load().Select(x => x.Title).ToList();
     }
@@ -29,9 +35,11 @@ public partial class DashboardForm : Form
     private void AddABookToolStripMenuItem_Click(object sender, EventArgs e)
     {
         var addBook = _provider.GetRequiredService<AddBookForm>();
-        addBook.Show();
 
-        booksBox.DataSource = _booksManager.Load().Select(x => x.Title).ToList();
+        if (addBook.ShowDialog() == DialogResult.OK)
+        {
+            RefreshBooksBox();
+        }
     }
 
     private void ExitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -51,7 +59,6 @@ public partial class DashboardForm : Form
 
             books.RemoveAt(index);
             _booksManager.Save(books);
-
             RefreshBooksBox();
         }
     }
@@ -60,12 +67,30 @@ public partial class DashboardForm : Form
     {
         var books = _booksManager.Load();
 
-        var index = booksBox.SelectedIndex;
-
-        BookPicture.ImageLocation = books.ElementAt(index).PathBookImg;
+        BookPicture.ImageLocation = books.ElementAt(booksBox.SelectedIndex).PathBookImg;
     }
 
     private void DashboardForm_Load(object sender, EventArgs e)
+    {
+        
+    }
+
+    private void EditABookToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+        var books = _booksManager.Load();
+        var index = booksBox.SelectedIndex;
+
+        _bookEditor.SetSelectedBook(books[index]);
+        _bookEditor.SetIndex(index);
+
+        var editForm = _provider.GetRequiredService<EditBookForm>();
+        if (editForm.ShowDialog() == DialogResult.OK)
+        {
+            RefreshBooksBox();
+        }
+    }
+
+    private void AuthorToolStripMenuItem_Click(object sender, EventArgs e)
     {
 
     }

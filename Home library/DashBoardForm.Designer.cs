@@ -61,8 +61,7 @@
             this.ExitToolStripMenuItem});
             this.OperationsList.Location = new System.Drawing.Point(0, 0);
             this.OperationsList.Name = "OperationsList";
-            this.OperationsList.Padding = new System.Windows.Forms.Padding(7, 3, 0, 3);
-            this.OperationsList.Size = new System.Drawing.Size(1050, 60);
+            this.OperationsList.Size = new System.Drawing.Size(919, 58);
             this.OperationsList.TabIndex = 0;
             // 
             // AddABookToolStripMenuItem
@@ -71,7 +70,7 @@
             this.AddABookToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("AddABookToolStripMenuItem.Image")));
             this.AddABookToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.AddABookToolStripMenuItem.Name = "AddABookToolStripMenuItem";
-            this.AddABookToolStripMenuItem.Size = new System.Drawing.Size(151, 54);
+            this.AddABookToolStripMenuItem.Size = new System.Drawing.Size(130, 54);
             this.AddABookToolStripMenuItem.Text = "Add a book";
             this.AddABookToolStripMenuItem.Click += new System.EventHandler(this.AddABookToolStripMenuItem_Click);
             // 
@@ -81,7 +80,7 @@
             this.RemoveABookToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("RemoveABookToolStripMenuItem.Image")));
             this.RemoveABookToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.RemoveABookToolStripMenuItem.Name = "RemoveABookToolStripMenuItem";
-            this.RemoveABookToolStripMenuItem.Size = new System.Drawing.Size(177, 54);
+            this.RemoveABookToolStripMenuItem.Size = new System.Drawing.Size(151, 54);
             this.RemoveABookToolStripMenuItem.Text = "Remove a book";
             this.RemoveABookToolStripMenuItem.Click += new System.EventHandler(this.RemoveABookToolStripMenuItem_Click);
             // 
@@ -91,8 +90,9 @@
             this.EditABookToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("EditABookToolStripMenuItem.Image")));
             this.EditABookToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.EditABookToolStripMenuItem.Name = "EditABookToolStripMenuItem";
-            this.EditABookToolStripMenuItem.Size = new System.Drawing.Size(149, 54);
+            this.EditABookToolStripMenuItem.Size = new System.Drawing.Size(128, 54);
             this.EditABookToolStripMenuItem.Text = "Edit a book";
+            this.EditABookToolStripMenuItem.Click += new System.EventHandler(this.EditABookToolStripMenuItem_Click);
             // 
             // SearchByToolStripMenuItem
             // 
@@ -106,37 +106,38 @@
             this.SearchByToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("SearchByToolStripMenuItem.Image")));
             this.SearchByToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.SearchByToolStripMenuItem.Name = "SearchByToolStripMenuItem";
-            this.SearchByToolStripMenuItem.Size = new System.Drawing.Size(137, 54);
+            this.SearchByToolStripMenuItem.Size = new System.Drawing.Size(120, 54);
             this.SearchByToolStripMenuItem.Text = "Search by";
             // 
             // AuthorToolStripMenuItem
             // 
             this.AuthorToolStripMenuItem.Name = "AuthorToolStripMenuItem";
-            this.AuthorToolStripMenuItem.Size = new System.Drawing.Size(173, 26);
-            this.AuthorToolStripMenuItem.Text = "Author";
+            this.AuthorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.AuthorToolStripMenuItem.Text = "Author\'s surname";
+            this.AuthorToolStripMenuItem.Click += new System.EventHandler(this.AuthorToolStripMenuItem_Click);
             // 
             // TitleToolStripMenuItem
             // 
             this.TitleToolStripMenuItem.Name = "TitleToolStripMenuItem";
-            this.TitleToolStripMenuItem.Size = new System.Drawing.Size(173, 26);
+            this.TitleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.TitleToolStripMenuItem.Text = "Title";
             // 
             // PublishmentToolStripMenuItem
             // 
             this.PublishmentToolStripMenuItem.Name = "PublishmentToolStripMenuItem";
-            this.PublishmentToolStripMenuItem.Size = new System.Drawing.Size(173, 26);
+            this.PublishmentToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.PublishmentToolStripMenuItem.Text = "Publishment";
             // 
             // CategoryToolStripMenuItem
             // 
             this.CategoryToolStripMenuItem.Name = "CategoryToolStripMenuItem";
-            this.CategoryToolStripMenuItem.Size = new System.Drawing.Size(173, 26);
+            this.CategoryToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.CategoryToolStripMenuItem.Text = "Category";
             // 
             // GenreToolStripMenuItem
             // 
             this.GenreToolStripMenuItem.Name = "GenreToolStripMenuItem";
-            this.GenreToolStripMenuItem.Size = new System.Drawing.Size(173, 26);
+            this.GenreToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.GenreToolStripMenuItem.Text = "Genre";
             // 
             // GenerateListsOfBooksToolStripMenuItem
@@ -145,7 +146,7 @@
             this.GenerateListsOfBooksToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("GenerateListsOfBooksToolStripMenuItem.Image")));
             this.GenerateListsOfBooksToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.GenerateListsOfBooksToolStripMenuItem.Name = "GenerateListsOfBooksToolStripMenuItem";
-            this.GenerateListsOfBooksToolStripMenuItem.Size = new System.Drawing.Size(224, 54);
+            this.GenerateListsOfBooksToolStripMenuItem.Size = new System.Drawing.Size(188, 54);
             this.GenerateListsOfBooksToolStripMenuItem.Text = "Generate lists of books";
             // 
             // ExitToolStripMenuItem
@@ -153,7 +154,7 @@
             this.ExitToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.ExitToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("ExitToolStripMenuItem.Image")));
             this.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem";
-            this.ExitToolStripMenuItem.Size = new System.Drawing.Size(67, 54);
+            this.ExitToolStripMenuItem.Size = new System.Drawing.Size(58, 54);
             this.ExitToolStripMenuItem.Text = "Exit";
             this.ExitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
             // 
@@ -163,20 +164,18 @@
             this.booksBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.booksBox.Font = new System.Drawing.Font("Calibri", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.booksBox.FormattingEnabled = true;
-            this.booksBox.ItemHeight = 22;
-            this.booksBox.Location = new System.Drawing.Point(12, 96);
-            this.booksBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.booksBox.ItemHeight = 17;
+            this.booksBox.Location = new System.Drawing.Point(10, 72);
             this.booksBox.Name = "booksBox";
-            this.booksBox.Size = new System.Drawing.Size(321, 528);
+            this.booksBox.Size = new System.Drawing.Size(281, 391);
             this.booksBox.TabIndex = 1;
             this.booksBox.SelectedIndexChanged += new System.EventHandler(this.BooksBox_SelectedIndexChanged);
             // 
             // BookPicture
             // 
-            this.BookPicture.Location = new System.Drawing.Point(371, 96);
-            this.BookPicture.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.BookPicture.Location = new System.Drawing.Point(325, 72);
             this.BookPicture.Name = "BookPicture";
-            this.BookPicture.Size = new System.Drawing.Size(191, 288);
+            this.BookPicture.Size = new System.Drawing.Size(167, 216);
             this.BookPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.BookPicture.TabIndex = 2;
             this.BookPicture.TabStop = false;
@@ -184,25 +183,24 @@
             // BookLabel
             // 
             this.BookLabel.AutoSize = true;
-            this.BookLabel.Location = new System.Drawing.Point(371, 406);
+            this.BookLabel.Location = new System.Drawing.Point(325, 304);
             this.BookLabel.Name = "BookLabel";
-            this.BookLabel.Size = new System.Drawing.Size(46, 20);
+            this.BookLabel.Size = new System.Drawing.Size(37, 15);
             this.BookLabel.TabIndex = 3;
             this.BookLabel.Text = "Book:";
             // 
             // DashboardForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.ClientSize = new System.Drawing.Size(1050, 700);
+            this.ClientSize = new System.Drawing.Size(919, 614);
             this.Controls.Add(this.BookLabel);
             this.Controls.Add(this.BookPicture);
             this.Controls.Add(this.booksBox);
             this.Controls.Add(this.OperationsList);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MainMenuStrip = this.OperationsList;
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "DashboardForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dashboard";

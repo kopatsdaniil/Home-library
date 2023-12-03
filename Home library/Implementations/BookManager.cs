@@ -1,4 +1,5 @@
-﻿using System.Xml.Serialization;
+﻿using System.Xml;
+using System.Xml.Serialization;
 using Home_library.Interfaces;
 using Home_library.Models.Book;
 
@@ -10,10 +11,11 @@ public class BookManager : IManager<Book>
 
     public void Save(IList<Book> books)
     {
+        var xmlWriterSettings = new XmlWriterSettings() { Indent = true };
         var serializer = new XmlSerializer(typeof(List<Book>));
 
-        using var stream = File.Create(FILENAME);
-        serializer.Serialize(stream, books);
+        using var writer = XmlWriter.Create(FILENAME, xmlWriterSettings);
+        serializer.Serialize(writer, books);
     }
 
     public IList<Book> Load()

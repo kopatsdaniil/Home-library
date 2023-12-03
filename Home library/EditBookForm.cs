@@ -1,15 +1,20 @@
 ﻿using System.Diagnostics.Tracing;
+using System.Globalization;
+using Home_library.Implementations;
 using Home_library.Interfaces;
 using Home_library.Models.Book;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Home_library;
 
-public partial class AddBookForm : Form
+public partial class EditBookForm : Form
 {
     private readonly IManager<Book> _bookManager;
     private readonly IValidator<Book> _bookValidator;
-    
-    public AddBookForm(IManager<Book> bookManager, IValidator<Book> bookValidator)
+    private readonly IServiceProvider _provider;
+    private readonly BookEditor _bookEditor;
+
+    public EditBookForm(IManager<Book> bookManager, IValidator<Book> bookValidator, IServiceProvider provider, BookEditor bookEditor)
     {
         InitializeComponent();
 
@@ -18,6 +23,20 @@ public partial class AddBookForm : Form
 
         _bookManager = bookManager;
         _bookValidator = bookValidator;
+        _provider = provider;
+        _bookEditor = bookEditor;
+
+        var selectedBook = _bookEditor.GetSelectedBook();
+        
+        AuthorNameData.Text = selectedBook.AuthorName;
+        AuthorSurnameData.Text = selectedBook.AuthorSurname;
+        TitleData.Text = selectedBook.Title;
+        ReleaseDateData.Value = selectedBook.ReleaseDate;
+        PublisherData.Text = selectedBook.Publisher;
+        DescriptionData.Text = selectedBook.Description;
+        BookImageData.Text = selectedBook.PathBookImg;
+        CategoryData.SelectedIndex = (int)selectedBook.Category;
+        GenreData.SelectedIndex = (int)selectedBook.Genre;
     }
 
     private void UploadImageButton_Click(object sender, EventArgs e)
@@ -35,18 +54,18 @@ public partial class AddBookForm : Form
 
     private void SaveButton_Click(object sender, EventArgs e)
     {
-        var newBook = new Book(AuthorNameData.Text, AuthorSurnameData.Text, TitleData.Text, ReleaseDateData.Value,
+        var bookToEdit = new Book(AuthorNameData.Text, AuthorSurnameData.Text, TitleData.Text, ReleaseDateData.Value,
             PublisherData.Text, DescriptionData.Text, BookImageData.Text, (BookCategory)CategoryData.SelectedIndex,
             (BookGenre)GenreData.SelectedIndex, Guid.NewGuid());
 
         var books = _bookManager.Load();
-
-        var validationResult = _bookValidator.Validate(books, newBook);
+        var index = _bookEditor.GetIndex();
+        var validationResult = _bookValidator.Validate(books, bookToEdit);
 
         MessageBox.Text = validationResult.Message;
         if (!validationResult.Success) return;
 
-        books.Add(newBook);
+        books[index] = bookToEdit;
         _bookManager.Save(books);
     }
 

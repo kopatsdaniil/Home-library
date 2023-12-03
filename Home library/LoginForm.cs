@@ -7,11 +7,10 @@ namespace Home_library;
 
 public partial class LoginForm : Form
 {
-    private readonly IServiceProvider _provider;
     private readonly IManager<User> _userManager;
     private readonly IValidator<User> _userValidator;
 
-    public LoginForm(IManager<User> userManager, IValidator<User> userValidator, IServiceProvider provider)
+    public LoginForm(IManager<User> userManager, IValidator<User> userValidator)
     {
         InitializeComponent();
 
@@ -20,7 +19,6 @@ public partial class LoginForm : Form
 
         _userManager = userManager;
         _userValidator = userValidator;
-        _provider = provider;
     }
 
     private void SetVisibilityIcon(bool argument)
@@ -96,10 +94,8 @@ public partial class LoginForm : Form
         foreach (var user in users)
             if (user.Username == username && user.Password == password)
             {
-                var dashboard = _provider.GetRequiredService<DashboardForm>();
-                dashboard.Show();
-
-                Hide();
+                DialogResult = DialogResult.OK;
+                Close();
             }
 
         ResetUserInformation("Username or password are incorrect!");
@@ -108,10 +104,8 @@ public partial class LoginForm : Form
 
     private void SignUpButton_Click(object sender, EventArgs e)
     {
-        var newUser = new User(TextUsername.Text, TextPassword.Text);
-
+        var newUser = new User(TextUsername.Text, TextPassword.Text, Guid.NewGuid());
         var users = _userManager.Load();
-
         var validationResult = _userValidator.Validate(users, newUser);
 
         ResetUserInformation(validationResult.Message);

@@ -7,7 +7,7 @@ namespace Home_library.Models.Book;
 public class Book
 {
     public Book(string authorName, string authorSurname, string title, DateTime releaseDate, string publisher,
-        string description, string pathBookImg, BookCategory category, BookGenre genre)
+        string description, string pathBookImg, BookCategory category, BookGenre genre, Guid id)
     {
         AuthorName = authorName;
         AuthorSurname = authorSurname;
@@ -18,6 +18,7 @@ public class Book
         PathBookImg = pathBookImg;
         Category = category;
         Genre = genre;
+        Id = id;
     }
 
     public Book()
@@ -57,6 +58,8 @@ public class Book
 
     [Required(ErrorMessage = "Book must have a genre")]
     public BookGenre Genre { get; set; }
+
+    public Guid Id { get; set; }
 
     public bool IsValid()
     {

@@ -1,4 +1,5 @@
-﻿using System.Xml.Serialization;
+﻿using System.Xml;
+using System.Xml.Serialization;
 using Home_library.Interfaces;
 using Home_library.Models;
 
@@ -18,9 +19,10 @@ public class UserManager : IManager<User>
 
     public void Save(IList<User> entities)
     {
+        var xmlWriterSettings = new XmlWriterSettings() { Indent = true };
         var serializer = new XmlSerializer(typeof(List<User>));
 
-        using var stream = File.Create(FILENAME);
-        serializer.Serialize(stream, entities);
+        using var writer = XmlWriter.Create(FILENAME);
+        serializer.Serialize(writer, entities);
     }
 }
