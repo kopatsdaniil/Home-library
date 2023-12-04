@@ -4,17 +4,17 @@ namespace Home_library.Implementations;
 
 public class BookEditor
 {
-    private Book selectedBook { get; set; }
+    private Book SelectedBook { get; set; }
     private int Index { get; set; }
 
     public void SetSelectedBook(Book book)
     {
-        selectedBook = book;
+        SelectedBook = book;
     }
 
     public Book GetSelectedBook()
     {
-        return selectedBook;
+        return SelectedBook;
     }
 
     public void SetIndex(int index)

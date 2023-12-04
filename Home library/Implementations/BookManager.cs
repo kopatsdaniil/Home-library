@@ -11,7 +11,7 @@ public class BookManager : IManager<Book>
 
     public void Save(IList<Book> books)
     {
-        var xmlWriterSettings = new XmlWriterSettings() { Indent = true };
+        var xmlWriterSettings = new XmlWriterSettings { Indent = true };
         var serializer = new XmlSerializer(typeof(List<Book>));
 
         using var writer = XmlWriter.Create(FILENAME, xmlWriterSettings);

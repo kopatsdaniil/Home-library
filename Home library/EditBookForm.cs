@@ -1,20 +1,16 @@
-﻿using System.Diagnostics.Tracing;
-using System.Globalization;
-using Home_library.Implementations;
+﻿using Home_library.Implementations;
 using Home_library.Interfaces;
 using Home_library.Models.Book;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace Home_library;
 
 public partial class EditBookForm : Form
 {
+    private readonly BookEditor _bookEditor;
     private readonly IManager<Book> _bookManager;
     private readonly IValidator<Book> _bookValidator;
-    private readonly IServiceProvider _provider;
-    private readonly BookEditor _bookEditor;
 
-    public EditBookForm(IManager<Book> bookManager, IValidator<Book> bookValidator, IServiceProvider provider, BookEditor bookEditor)
+    public EditBookForm(IManager<Book> bookManager, IValidator<Book> bookValidator, BookEditor bookEditor)
     {
         InitializeComponent();
 
@@ -23,11 +19,10 @@ public partial class EditBookForm : Form
 
         _bookManager = bookManager;
         _bookValidator = bookValidator;
-        _provider = provider;
         _bookEditor = bookEditor;
 
         var selectedBook = _bookEditor.GetSelectedBook();
-        
+
         AuthorNameData.Text = selectedBook.AuthorName;
         AuthorSurnameData.Text = selectedBook.AuthorSurname;
         TitleData.Text = selectedBook.Title;
@@ -41,7 +36,7 @@ public partial class EditBookForm : Form
 
     private void UploadImageButton_Click(object sender, EventArgs e)
     {
-        var dialog = new OpenFileDialog();  
+        var dialog = new OpenFileDialog();
         var result = dialog.ShowDialog();
 
         if (result == DialogResult.OK)

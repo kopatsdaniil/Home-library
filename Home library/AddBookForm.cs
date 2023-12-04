@@ -1,5 +1,4 @@
-﻿using System.Diagnostics.Tracing;
-using Home_library.Interfaces;
+﻿using Home_library.Interfaces;
 using Home_library.Models.Book;
 
 namespace Home_library;
@@ -8,7 +7,7 @@ public partial class AddBookForm : Form
 {
     private readonly IManager<Book> _bookManager;
     private readonly IValidator<Book> _bookValidator;
-    
+
     public AddBookForm(IManager<Book> bookManager, IValidator<Book> bookValidator)
     {
         InitializeComponent();
@@ -22,7 +21,7 @@ public partial class AddBookForm : Form
 
     private void UploadImageButton_Click(object sender, EventArgs e)
     {
-        var dialog = new OpenFileDialog();  
+        var dialog = new OpenFileDialog();
         var result = dialog.ShowDialog();
 
         if (result == DialogResult.OK)

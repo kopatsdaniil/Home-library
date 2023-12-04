@@ -19,7 +19,7 @@ public class UserManager : IManager<User>
 
     public void Save(IList<User> entities)
     {
-        var xmlWriterSettings = new XmlWriterSettings() { Indent = true };
+        var xmlWriterSettings = new XmlWriterSettings { Indent = true };
         var serializer = new XmlSerializer(typeof(List<User>));
 
         using var writer = XmlWriter.Create(FILENAME);

@@ -1,7 +1,5 @@
 using Home_library.Interfaces;
 using Home_library.Models;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.VisualBasic.Devices;
 
 namespace Home_library;
 
@@ -75,8 +73,6 @@ public partial class LoginForm : Form
         }
 
         SetVisibilityIcon(true);
-
-        
     }
 
     private void CloseButton_Click(object sender, EventArgs e)
@@ -127,15 +123,12 @@ public partial class LoginForm : Form
     private void PasswordInvisible_Click(object sender, EventArgs e)
     {
         if (TextPassword.Text != "Password") TextPassword.PasswordChar = '\0';
-        
+
         PasswordVisible.BringToFront();
     }
 
     private void LoginForm_KeyDown(object sender, KeyEventArgs e)
     {
-        if (e.KeyValue == (char)Keys.Enter)
-        {
-            LogInButton.PerformClick();
-        }
+        if (e.KeyValue == (char)Keys.Enter) LogInButton.PerformClick();
     }
 }

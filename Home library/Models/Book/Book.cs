@@ -75,4 +75,22 @@ public class Book
 
         return true;
     }
+
+    public string AuthorFullName()
+    {
+        return AuthorName + ' ' + AuthorSurname;
+    }
+
+    public bool Search(string searchString)
+    {
+        searchString = searchString.ToLower();
+
+        if (AuthorName.ToLower().Contains(searchString) || AuthorSurname.ToLower().Contains(searchString) ||
+            Title.ToLower().Contains(searchString) ||
+            Publisher.ToLower().Contains(searchString) || Description.ToLower().Contains(searchString) ||
+            Category.ToString().ToLower().Contains(searchString) || Genre.ToString().ToLower().Contains(searchString))
+            return true;
+
+        return false;
+    }
 }

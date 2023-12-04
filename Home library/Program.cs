@@ -24,9 +24,7 @@ internal static class Program
         var loginForm = ServiceProvider.GetRequiredService<LoginForm>();
 
         if (loginForm.ShowDialog() == DialogResult.OK)
-        {
             Application.Run(ServiceProvider.GetRequiredService<DashboardForm>());
-        }
     }
 
     private static IHostBuilder CreateHostBuilder()
@@ -39,6 +37,7 @@ internal static class Program
                 services.AddTransient<IManager<User>, UserManager>();
                 services.AddTransient<IManager<Book>, BookManager>();
                 services.AddSingleton<BookEditor>();
+                services.AddSingleton<List<Book>>();
 
                 services.AddTransient<LoginForm>();
                 services.AddTransient<DashboardForm>();
