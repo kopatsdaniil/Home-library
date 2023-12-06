@@ -65,8 +65,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.SlateGray;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(14, 16);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(50, 50);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -100,10 +99,9 @@
             this.panel1.Controls.Add(this.AuthorNameLabel);
             this.panel1.Controls.Add(this.AddBookLabel);
             this.panel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel1.Location = new System.Drawing.Point(14, 16);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(520, 551);
+            this.panel1.Size = new System.Drawing.Size(455, 413);
             this.panel1.TabIndex = 1;
             // 
             // MessageBox
@@ -111,10 +109,9 @@
             this.MessageBox.BackColor = System.Drawing.Color.SlateGray;
             this.MessageBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.MessageBox.Enabled = false;
-            this.MessageBox.Location = new System.Drawing.Point(19, 496);
-            this.MessageBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.MessageBox.Location = new System.Drawing.Point(17, 372);
             this.MessageBox.Name = "MessageBox";
-            this.MessageBox.Size = new System.Drawing.Size(209, 20);
+            this.MessageBox.Size = new System.Drawing.Size(183, 16);
             this.MessageBox.TabIndex = 31;
             // 
             // BookImageData
@@ -122,10 +119,9 @@
             this.BookImageData.BackColor = System.Drawing.Color.SlateGray;
             this.BookImageData.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.BookImageData.Enabled = false;
-            this.BookImageData.Location = new System.Drawing.Point(235, 333);
-            this.BookImageData.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.BookImageData.Location = new System.Drawing.Point(206, 250);
             this.BookImageData.Name = "BookImageData";
-            this.BookImageData.Size = new System.Drawing.Size(219, 20);
+            this.BookImageData.Size = new System.Drawing.Size(192, 16);
             this.BookImageData.TabIndex = 30;
             // 
             // CancelButton
@@ -135,10 +131,9 @@
             this.CancelButton.FlatAppearance.BorderSize = 2;
             this.CancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CancelButton.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.CancelButton.Location = new System.Drawing.Point(371, 487);
-            this.CancelButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.CancelButton.Location = new System.Drawing.Point(325, 365);
             this.CancelButton.Name = "CancelButton";
-            this.CancelButton.Size = new System.Drawing.Size(86, 45);
+            this.CancelButton.Size = new System.Drawing.Size(75, 34);
             this.CancelButton.TabIndex = 29;
             this.CancelButton.Text = "Cancel";
             this.CancelButton.UseVisualStyleBackColor = false;
@@ -151,10 +146,9 @@
             this.SaveButton.FlatAppearance.BorderSize = 2;
             this.SaveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SaveButton.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.SaveButton.Location = new System.Drawing.Point(259, 487);
-            this.SaveButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.SaveButton.Location = new System.Drawing.Point(227, 365);
             this.SaveButton.Name = "SaveButton";
-            this.SaveButton.Size = new System.Drawing.Size(86, 45);
+            this.SaveButton.Size = new System.Drawing.Size(75, 34);
             this.SaveButton.TabIndex = 28;
             this.SaveButton.Text = "Save";
             this.SaveButton.UseVisualStyleBackColor = false;
@@ -168,28 +162,27 @@
             this.ReleaseDateData.CalendarTitleBackColor = System.Drawing.Color.PapayaWhip;
             this.ReleaseDateData.CalendarTitleForeColor = System.Drawing.Color.PapayaWhip;
             this.ReleaseDateData.CalendarTrailingForeColor = System.Drawing.Color.PapayaWhip;
-            this.ReleaseDateData.Location = new System.Drawing.Point(193, 189);
-            this.ReleaseDateData.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.ReleaseDateData.Location = new System.Drawing.Point(169, 142);
             this.ReleaseDateData.Name = "ReleaseDateData";
-            this.ReleaseDateData.Size = new System.Drawing.Size(263, 27);
+            this.ReleaseDateData.Size = new System.Drawing.Size(231, 23);
             this.ReleaseDateData.TabIndex = 27;
             // 
             // GenreData
             // 
             this.GenreData.BackColor = System.Drawing.Color.PapayaWhip;
+            this.GenreData.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.GenreData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.GenreData.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.GenreData.FormattingEnabled = true;
-            this.GenreData.Location = new System.Drawing.Point(193, 435);
-            this.GenreData.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.GenreData.Location = new System.Drawing.Point(169, 326);
             this.GenreData.Name = "GenreData";
-            this.GenreData.Size = new System.Drawing.Size(261, 27);
+            this.GenreData.Size = new System.Drawing.Size(229, 23);
             this.GenreData.TabIndex = 26;
-            this.GenreData.Text = "Select the genre";
             // 
             // CategoryData
             // 
             this.CategoryData.BackColor = System.Drawing.Color.PapayaWhip;
+            this.CategoryData.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CategoryData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CategoryData.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.CategoryData.FormattingEnabled = true;
@@ -200,23 +193,20 @@
             "Nonfiction",
             "Drama",
             "Prose"});
-            this.CategoryData.Location = new System.Drawing.Point(193, 396);
-            this.CategoryData.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.CategoryData.Location = new System.Drawing.Point(169, 297);
             this.CategoryData.Name = "CategoryData";
-            this.CategoryData.Size = new System.Drawing.Size(261, 27);
+            this.CategoryData.Size = new System.Drawing.Size(229, 23);
             this.CategoryData.TabIndex = 25;
-            this.CategoryData.Text = "Select the category";
             // 
             // DescriptionData
             // 
             this.DescriptionData.BackColor = System.Drawing.Color.PapayaWhip;
             this.DescriptionData.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DescriptionData.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.DescriptionData.Location = new System.Drawing.Point(194, 260);
-            this.DescriptionData.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.DescriptionData.Location = new System.Drawing.Point(170, 195);
             this.DescriptionData.Multiline = true;
             this.DescriptionData.Name = "DescriptionData";
-            this.DescriptionData.Size = new System.Drawing.Size(263, 42);
+            this.DescriptionData.Size = new System.Drawing.Size(230, 32);
             this.DescriptionData.TabIndex = 22;
             // 
             // PublisherData
@@ -224,10 +214,9 @@
             this.PublisherData.BackColor = System.Drawing.Color.PapayaWhip;
             this.PublisherData.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.PublisherData.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.PublisherData.Location = new System.Drawing.Point(194, 227);
-            this.PublisherData.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.PublisherData.Location = new System.Drawing.Point(170, 170);
             this.PublisherData.Name = "PublisherData";
-            this.PublisherData.Size = new System.Drawing.Size(263, 20);
+            this.PublisherData.Size = new System.Drawing.Size(230, 16);
             this.PublisherData.TabIndex = 21;
             // 
             // TitleData
@@ -235,10 +224,9 @@
             this.TitleData.BackColor = System.Drawing.Color.PapayaWhip;
             this.TitleData.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TitleData.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.TitleData.Location = new System.Drawing.Point(194, 160);
-            this.TitleData.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.TitleData.Location = new System.Drawing.Point(170, 120);
             this.TitleData.Name = "TitleData";
-            this.TitleData.Size = new System.Drawing.Size(263, 20);
+            this.TitleData.Size = new System.Drawing.Size(230, 16);
             this.TitleData.TabIndex = 20;
             // 
             // AuthorSurnameData
@@ -246,10 +234,9 @@
             this.AuthorSurnameData.BackColor = System.Drawing.Color.PapayaWhip;
             this.AuthorSurnameData.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.AuthorSurnameData.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.AuthorSurnameData.Location = new System.Drawing.Point(193, 127);
-            this.AuthorSurnameData.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.AuthorSurnameData.Location = new System.Drawing.Point(169, 95);
             this.AuthorSurnameData.Name = "AuthorSurnameData";
-            this.AuthorSurnameData.Size = new System.Drawing.Size(263, 20);
+            this.AuthorSurnameData.Size = new System.Drawing.Size(230, 16);
             this.AuthorSurnameData.TabIndex = 19;
             // 
             // AuthorNameData
@@ -257,10 +244,9 @@
             this.AuthorNameData.BackColor = System.Drawing.Color.PapayaWhip;
             this.AuthorNameData.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.AuthorNameData.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.AuthorNameData.Location = new System.Drawing.Point(194, 93);
-            this.AuthorNameData.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.AuthorNameData.Location = new System.Drawing.Point(170, 70);
             this.AuthorNameData.Name = "AuthorNameData";
-            this.AuthorNameData.Size = new System.Drawing.Size(263, 20);
+            this.AuthorNameData.Size = new System.Drawing.Size(230, 16);
             this.AuthorNameData.TabIndex = 18;
             // 
             // UploadImageButton
@@ -269,10 +255,9 @@
             this.UploadImageButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("UploadImageButton.BackgroundImage")));
             this.UploadImageButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.UploadImageButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.UploadImageButton.Location = new System.Drawing.Point(194, 327);
-            this.UploadImageButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.UploadImageButton.Location = new System.Drawing.Point(170, 245);
             this.UploadImageButton.Name = "UploadImageButton";
-            this.UploadImageButton.Size = new System.Drawing.Size(34, 35);
+            this.UploadImageButton.Size = new System.Drawing.Size(30, 26);
             this.UploadImageButton.TabIndex = 17;
             this.UploadImageButton.UseVisualStyleBackColor = false;
             this.UploadImageButton.Click += new System.EventHandler(this.UploadImageButton_Click);
@@ -281,9 +266,9 @@
             // 
             this.GenreLabel.AutoSize = true;
             this.GenreLabel.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.GenreLabel.Location = new System.Drawing.Point(14, 439);
+            this.GenreLabel.Location = new System.Drawing.Point(12, 329);
             this.GenreLabel.Name = "GenreLabel";
-            this.GenreLabel.Size = new System.Drawing.Size(91, 21);
+            this.GenreLabel.Size = new System.Drawing.Size(69, 15);
             this.GenreLabel.TabIndex = 9;
             this.GenreLabel.Text = "Book genre";
             // 
@@ -291,9 +276,9 @@
             // 
             this.CategoryLabel.AutoSize = true;
             this.CategoryLabel.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.CategoryLabel.Location = new System.Drawing.Point(14, 400);
+            this.CategoryLabel.Location = new System.Drawing.Point(12, 300);
             this.CategoryLabel.Name = "CategoryLabel";
-            this.CategoryLabel.Size = new System.Drawing.Size(111, 21);
+            this.CategoryLabel.Size = new System.Drawing.Size(84, 15);
             this.CategoryLabel.TabIndex = 8;
             this.CategoryLabel.Text = "Book category";
             // 
@@ -301,9 +286,9 @@
             // 
             this.BookImgLabel.AutoSize = true;
             this.BookImgLabel.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BookImgLabel.Location = new System.Drawing.Point(14, 327);
+            this.BookImgLabel.Location = new System.Drawing.Point(12, 245);
             this.BookImgLabel.Name = "BookImgLabel";
-            this.BookImgLabel.Size = new System.Drawing.Size(93, 21);
+            this.BookImgLabel.Size = new System.Drawing.Size(70, 15);
             this.BookImgLabel.TabIndex = 7;
             this.BookImgLabel.Text = "Book image";
             // 
@@ -311,9 +296,9 @@
             // 
             this.DescriptionLabel.AutoSize = true;
             this.DescriptionLabel.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.DescriptionLabel.Location = new System.Drawing.Point(14, 260);
+            this.DescriptionLabel.Location = new System.Drawing.Point(12, 195);
             this.DescriptionLabel.Name = "DescriptionLabel";
-            this.DescriptionLabel.Size = new System.Drawing.Size(129, 21);
+            this.DescriptionLabel.Size = new System.Drawing.Size(98, 15);
             this.DescriptionLabel.TabIndex = 6;
             this.DescriptionLabel.Text = "Book description";
             // 
@@ -321,9 +306,9 @@
             // 
             this.PublisherLabel.AutoSize = true;
             this.PublisherLabel.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.PublisherLabel.Location = new System.Drawing.Point(14, 227);
+            this.PublisherLabel.Location = new System.Drawing.Point(12, 170);
             this.PublisherLabel.Name = "PublisherLabel";
-            this.PublisherLabel.Size = new System.Drawing.Size(116, 21);
+            this.PublisherLabel.Size = new System.Drawing.Size(88, 15);
             this.PublisherLabel.TabIndex = 5;
             this.PublisherLabel.Text = "Book publisher";
             // 
@@ -331,9 +316,9 @@
             // 
             this.ReleaseDateLabel.AutoSize = true;
             this.ReleaseDateLabel.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.ReleaseDateLabel.Location = new System.Drawing.Point(14, 193);
+            this.ReleaseDateLabel.Location = new System.Drawing.Point(12, 145);
             this.ReleaseDateLabel.Name = "ReleaseDateLabel";
-            this.ReleaseDateLabel.Size = new System.Drawing.Size(138, 21);
+            this.ReleaseDateLabel.Size = new System.Drawing.Size(105, 15);
             this.ReleaseDateLabel.TabIndex = 4;
             this.ReleaseDateLabel.Text = "Book release date";
             // 
@@ -341,9 +326,9 @@
             // 
             this.TitleLabel.AutoSize = true;
             this.TitleLabel.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.TitleLabel.Location = new System.Drawing.Point(14, 160);
+            this.TitleLabel.Location = new System.Drawing.Point(12, 120);
             this.TitleLabel.Name = "TitleLabel";
-            this.TitleLabel.Size = new System.Drawing.Size(79, 21);
+            this.TitleLabel.Size = new System.Drawing.Size(60, 15);
             this.TitleLabel.TabIndex = 3;
             this.TitleLabel.Text = "Book title";
             // 
@@ -351,9 +336,9 @@
             // 
             this.AuthorSurnameLabel.AutoSize = true;
             this.AuthorSurnameLabel.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.AuthorSurnameLabel.Location = new System.Drawing.Point(14, 127);
+            this.AuthorSurnameLabel.Location = new System.Drawing.Point(12, 95);
             this.AuthorSurnameLabel.Name = "AuthorSurnameLabel";
-            this.AuthorSurnameLabel.Size = new System.Drawing.Size(174, 21);
+            this.AuthorSurnameLabel.Size = new System.Drawing.Size(133, 15);
             this.AuthorSurnameLabel.TabIndex = 2;
             this.AuthorSurnameLabel.Text = "Book author\'s surname";
             // 
@@ -361,9 +346,9 @@
             // 
             this.AuthorNameLabel.AutoSize = true;
             this.AuthorNameLabel.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.AuthorNameLabel.Location = new System.Drawing.Point(14, 93);
+            this.AuthorNameLabel.Location = new System.Drawing.Point(12, 70);
             this.AuthorNameLabel.Name = "AuthorNameLabel";
-            this.AuthorNameLabel.Size = new System.Drawing.Size(152, 21);
+            this.AuthorNameLabel.Size = new System.Drawing.Size(116, 15);
             this.AuthorNameLabel.TabIndex = 1;
             this.AuthorNameLabel.Text = "Book author\'s name";
             // 
@@ -371,47 +356,46 @@
             // 
             this.AddBookLabel.AutoSize = true;
             this.AddBookLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.AddBookLabel.Location = new System.Drawing.Point(64, 17);
+            this.AddBookLabel.Location = new System.Drawing.Point(56, 13);
             this.AddBookLabel.Name = "AddBookLabel";
-            this.AddBookLabel.Size = new System.Drawing.Size(107, 24);
+            this.AddBookLabel.Size = new System.Drawing.Size(88, 19);
             this.AddBookLabel.TabIndex = 0;
             this.AddBookLabel.Text = "Add a book";
             // 
             // BookImageBox
             // 
             this.BookImageBox.BackColor = System.Drawing.Color.SlateGray;
-            this.BookImageBox.Location = new System.Drawing.Point(551, 16);
-            this.BookImageBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.BookImageBox.Location = new System.Drawing.Point(482, 12);
             this.BookImageBox.Name = "BookImageBox";
-            this.BookImageBox.Size = new System.Drawing.Size(243, 379);
+            this.BookImageBox.Size = new System.Drawing.Size(213, 284);
             this.BookImageBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.BookImageBox.TabIndex = 2;
             this.BookImageBox.TabStop = false;
+            this.BookImageBox.Text = "Place for image";
             // 
             // InfoLabel
             // 
             this.InfoLabel.AutoSize = true;
             this.InfoLabel.BackColor = System.Drawing.Color.SlateGray;
             this.InfoLabel.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.InfoLabel.Location = new System.Drawing.Point(611, 176);
+            this.InfoLabel.Location = new System.Drawing.Point(537, 132);
             this.InfoLabel.Name = "InfoLabel";
-            this.InfoLabel.Size = new System.Drawing.Size(131, 23);
-            this.InfoLabel.TabIndex = 3;
+            this.InfoLabel.Size = new System.Drawing.Size(103, 18);
+            this.InfoLabel.TabIndex = 4;
             this.InfoLabel.Text = "Place for image";
             // 
             // AddBookForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.ClientSize = new System.Drawing.Size(1050, 640);
+            this.ClientSize = new System.Drawing.Size(919, 480);
             this.Controls.Add(this.InfoLabel);
             this.Controls.Add(this.BookImageBox);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Location = new System.Drawing.Point(435, 250);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "AddBookForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddBookForm";

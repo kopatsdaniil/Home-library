@@ -244,7 +244,7 @@
             this.TextUsername.Name = "TextUsername";
             this.TextUsername.Size = new System.Drawing.Size(200, 22);
             this.TextUsername.TabIndex = 17;
-            this.TextUsername.Text = "Username";
+            this.TextUsername.PlaceholderText = "Username";
             this.TextUsername.MouseClick += new System.Windows.Forms.MouseEventHandler(this.TextUsername_MouseClick);
             // 
             // TextPassword
@@ -256,7 +256,8 @@
             this.TextPassword.Name = "TextPassword";
             this.TextPassword.Size = new System.Drawing.Size(200, 22);
             this.TextPassword.TabIndex = 18;
-            this.TextPassword.Text = "Password";
+            this.TextPassword.PlaceholderText = "Password";
+            this.TextPassword.PasswordChar = '*';
             this.TextPassword.MouseClick += new System.Windows.Forms.MouseEventHandler(this.TextPassword_MouseClick);
             // 
             // TextMessage

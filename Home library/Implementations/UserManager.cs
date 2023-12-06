@@ -7,13 +7,13 @@ namespace Home_library.Implementations;
 
 public class UserManager : IManager<User>
 {
-    private const string FILENAME = "users.xml";
+    private const string Filepath = @"C:\Users\kopot\source\repos\Home library\Home library\Data\users.xml";
 
     public IList<User> Load()
     {
         var serializer = new XmlSerializer(typeof(List<User>));
 
-        using var stream = File.OpenRead(FILENAME);
+        using var stream = File.OpenRead(Filepath);
         return (List<User>)serializer.Deserialize(stream);
     }
 
@@ -22,7 +22,7 @@ public class UserManager : IManager<User>
         var xmlWriterSettings = new XmlWriterSettings { Indent = true };
         var serializer = new XmlSerializer(typeof(List<User>));
 
-        using var writer = XmlWriter.Create(FILENAME);
+        using var writer = XmlWriter.Create(Filepath, xmlWriterSettings);
         serializer.Serialize(writer, entities);
     }
 }

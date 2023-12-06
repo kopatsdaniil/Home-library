@@ -8,9 +8,9 @@ namespace Home_library;
 public partial class DashboardForm : Form
 {
     private readonly BookEditor _bookEditor;
+    private readonly List<Book> _booksFound;
     private readonly IManager<Book> _booksManager;
     private readonly IServiceProvider _provider;
-    public List<Book> BooksFound;
 
     public DashboardForm(IServiceProvider provider, IManager<Book> booksManager, BookEditor bookEditor,
         List<Book> booksFound)
@@ -20,7 +20,7 @@ public partial class DashboardForm : Form
         _provider = provider;
         _booksManager = booksManager;
         _bookEditor = bookEditor;
-        BooksFound = booksFound;
+        _booksFound = booksFound;
 
         RefreshBooksBox();
     }
@@ -83,7 +83,6 @@ public partial class DashboardForm : Form
         var index = booksBox.SelectedIndex;
 
         _bookEditor.SetSelectedBook(books.ElementAt(index));
-        _bookEditor.SetIndex(index);
 
         var editForm = _provider.GetRequiredService<EditBookForm>();
         if (editForm.ShowDialog() == DialogResult.OK) RefreshBooksBox();
@@ -91,6 +90,8 @@ public partial class DashboardForm : Form
 
     private void SearchButton_Click(object sender, EventArgs e)
     {
+        _booksFound.Clear();
+
         var textToSearch = SearchBox.Text;
         var books = _booksManager.Load();
 
@@ -98,28 +99,26 @@ public partial class DashboardForm : Form
 
         foreach (var book in books)
             if (book.Search(textToSearch))
-                BooksFound.Add(book);
+                _booksFound.Add(book);
 
         booksFoundBox.BringToFront();
-        booksFoundBox.DataSource = BooksFound.Select(x => x.Title).ToList();
-
-        BooksFound.Clear();
+        booksFoundBox.DataSource = _booksFound.Select(x => x.Title).ToList();
     }
 
     private void SearchBox_Click(object sender, EventArgs e)
     {
-        if (SearchBox.Text == "Search") SearchBox.Clear();
+        SearchBox.Clear();
     }
 
     private void ShowAllBooks_Click(object sender, EventArgs e)
     {
-        SearchBox.Text = "Search";
+        SearchBox.Clear();
         booksBox.BringToFront();
     }
 
     private void BooksFoundBox_SelectedIndexChanged(object sender, EventArgs e)
     {
-        var books = BooksFound;
+        var books = _booksFound;
         var selectedBook = books.ElementAt(booksFoundBox.SelectedIndex);
 
         BookPicture.ImageLocation = selectedBook.PathBookImg;
@@ -130,5 +129,11 @@ public partial class DashboardForm : Form
         DescriptionData.Text = selectedBook.Description;
         CategoryData.Text = selectedBook.Category.ToString();
         GenreData.Text = selectedBook.Genre.ToString();
+    }
+
+    private void GenerateListsOfBooksToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+        var makeList = _provider.GetRequiredService<MakeListForm>();
+        makeList.Show();
     }
 }

@@ -43,6 +43,7 @@ internal static class Program
                 services.AddTransient<DashboardForm>();
                 services.AddTransient<AddBookForm>();
                 services.AddTransient<EditBookForm>();
+                services.AddTransient<MakeListForm>();
             });
     }
 }

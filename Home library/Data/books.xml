@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ArrayOfBook xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<Book>
+		<AuthorName>Joanne</AuthorName>
+		<AuthorSurname>Rowling</AuthorSurname>
+		<Title>Harry Potter and the Philosopher's Stone</Title>
+		<ReleaseDate>1996-06-26T22:12:06</ReleaseDate>
+		<PathBookImg>C:\Users\kopot\source\repos\Home library\Home library\Posters\Harry_Potter_and_the_Philosopher's_Stone_Book_Cover.jpg</PathBookImg>
+		<Publisher>Bloomsbury</Publisher>
+		<Description>The novels follow Harry Potter, an 11-year-old boy who discovers he is the son of famous wizards and will attend Hogwarts School of Witchcraft and Wizardry</Description>
+		<Category>Fiction</Category>
+		<Genre>Fantasy</Genre>
+		<Id>271cbe0c-a5f4-47ad-84a5-2d3f2939f972</Id>
+	</Book>
+	<Book>
+		<AuthorName>Joanne</AuthorName>
+		<AuthorSurname>Rowling</AuthorSurname>
+		<Title>Harry Potter and the Chamber of Secrets</Title>
+		<ReleaseDate>1998-07-02T22:48:34</ReleaseDate>
+		<PathBookImg>C:\Users\kopot\source\repos\Home library\Home library\Posters\Harry_Potter_and_the_Chamber_of_Secrets.jpg</PathBookImg>
+		<Publisher>Bloomsbury</Publisher>
+		<Description>Harry Potter and the Chamber of Secrets continues to examine what makes a person who he or she is, which began in the first book</Description>
+		<Category>Fiction</Category>
+		<Genre>Fantasy</Genre>
+		<Id>3c7f352c-da3c-4247-ba2e-de89eb8c2a1f</Id>
+	</Book>
+	<Book>
+		<AuthorName>Joanne</AuthorName>
+		<AuthorSurname>Rowling</AuthorSurname>
+		<Title>Harry Potter and the Prisoner of Azkaban</Title>
+		<ReleaseDate>1999-07-08T22:51:36</ReleaseDate>
+		<PathBookImg>C:\Users\kopot\source\repos\Home library\Home library\Posters\Harry_Potter_and_the_Prisoner_of_Azkaban.jpg</PathBookImg>
+		<Publisher>Bloomsbury</Publisher>
+		<Description>Harry Potter and the Prisoner of Azkaban is the third book in the Harry Potter series</Description>
+		<Category>Fiction</Category>
+		<Genre>Fantasy</Genre>
+		<Id>b84617c2-f702-4657-aaf2-ceb0ff50ac46</Id>
+	</Book>
+	<Book>
+		<AuthorName>Joanne</AuthorName>
+		<AuthorSurname>Rowling</AuthorSurname>
+		<Title>Harry Potter and the Goblet of Fire</Title>
+		<ReleaseDate>2000-07-08T22:53:34</ReleaseDate>
+		<PathBookImg>C:\Users\kopot\source\repos\Home library\Home library\Posters\Harry_Potter_and_the_Goblet_of_Fire_cover.png</PathBookImg>
+		<Publisher>Bloomsbury</Publisher>
+		<Description>Harry Potter and the Goblet of Fire is the fourth book in the Harry Potter series</Description>
+		<Category>Fiction</Category>
+		<Genre>Fantasy</Genre>
+		<Id>1f98061a-24f1-4976-b07e-b2996746039d</Id>
+	</Book>
+	<Book>
+		<AuthorName>Joanne</AuthorName>
+		<AuthorSurname>Rowling</AuthorSurname>
+		<Title>Harry Potter and the Order of the Phoenix</Title>
+		<ReleaseDate>2003-06-21T22:54:37</ReleaseDate>
+		<PathBookImg>C:\Users\kopot\source\repos\Home library\Home library\Posters\Harry_Potter_and_the_Order_of_the_Phoenix.jpg</PathBookImg>
+		<Publisher>Bloomsbury</Publisher>
+		<Description>Harry Potter and the Order of the Phoenix is the fifth book in the Harry Potter series</Description>
+		<Category>Fiction</Category>
+		<Genre>Fantasy</Genre>
+		<Id>856ee206-8239-4d28-939b-9da29b75d7c8</Id>
+	</Book>
+	<Book>
+		<AuthorName>Joanne</AuthorName>
+		<AuthorSurname>Rowling</AuthorSurname>
+		<Title>Harry Potter and the Half-Blood Prince</Title>
+		<ReleaseDate>2005-07-16T22:57:59</ReleaseDate>
+		<PathBookImg>C:\Users\kopot\source\repos\Home library\Home library\Posters\Harry_Potter_and_the_Half-Blood_Prince_cover.png</PathBookImg>
+		<Publisher>Bloomsbury</Publisher>
+		<Description>Harry Potter and the Half-Blood Prince is the sixth book in the Harry Potter series</Description>
+		<Category>Fiction</Category>
+		<Genre>Fantasy</Genre>
+		<Id>5c32db4f-0667-4c3c-9c46-e2c85d771344</Id>
+	</Book>
+	<Book>
+		<AuthorName>Joanne</AuthorName>
+		<AuthorSurname>Rowling</AuthorSurname>
+		<Title>Harry Potter and the Deathly Hallows</Title>
+		<ReleaseDate>2007-07-21T22:59:05</ReleaseDate>
+		<PathBookImg>C:\Users\kopot\source\repos\Home library\Home library\Posters\Harry_Potter_and_the_Deathly_Hallows.jpg</PathBookImg>
+		<Publisher>Bloomsbury</Publisher>
+		<Description>Harry Potter and the Deathly Hallows is the last book in the Harry Potter series</Description>
+		<Category>Fiction</Category>
+		<Genre>Fantasy</Genre>
+		<Id>32854f89-1cea-4304-a6af-7afb2d794fd8</Id>
+	</Book>
+	<Book>
+		<AuthorName>Leo</AuthorName>
+		<AuthorSurname>Tolstoy</AuthorSurname>
+		<Title>War and Peace</Title>
+		<ReleaseDate>1873-01-01T23:11:30</ReleaseDate>
+		<PathBookImg>C:\Users\kopot\source\repos\Home library\Home library\Posters\War_and_Peace.jpg</PathBookImg>
+		<Publisher>The Russian Messenger</Publisher>
+		<Description>The novel is set 60 years before Tolstoy's day, but he had spoken with people who lived through the 1812 French invasion of Russia</Description>
+		<Category>Nonfiction</Category>
+		<Genre>Historical</Genre>
+		<Id>ff590268-13bd-4202-8ce1-f631dce29aea</Id>
+	</Book>
+	<Book>
+		<AuthorName>Fyodor</AuthorName>
+		<AuthorSurname>Dostoevsky</AuthorSurname>
+		<Title>Crime and Punishment</Title>
+		<ReleaseDate>1866-01-01T23:14:39</ReleaseDate>
+		<PathBookImg>C:\Users\kopot\source\repos\Home library\Home library\Posters\Crime_and_punishment_cover.png</PathBookImg>
+		<Publisher>The Russian Messenger</Publisher>
+		<Description>Social-psychological and social-philosophical novel by Fyodor Mikhailovich Dostoevsky, on which the writer worked in 1865-1866</Description>
+		<Category>Drama</Category>
+		<Genre>Romance</Genre>
+		<Id>91eca222-c08a-4965-af5e-85eef95c1581</Id>
+	</Book>
+</ArrayOfBook>

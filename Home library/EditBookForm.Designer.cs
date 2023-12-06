@@ -177,6 +177,7 @@
             // GenreData
             // 
             this.GenreData.BackColor = System.Drawing.Color.PapayaWhip;
+            this.GenreData.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.GenreData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.GenreData.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.GenreData.FormattingEnabled = true;
@@ -185,11 +186,11 @@
             this.GenreData.Name = "GenreData";
             this.GenreData.Size = new System.Drawing.Size(261, 27);
             this.GenreData.TabIndex = 26;
-            this.GenreData.Text = "Select the genre";
             // 
             // CategoryData
             // 
             this.CategoryData.BackColor = System.Drawing.Color.PapayaWhip;
+            this.CategoryData.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CategoryData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CategoryData.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.CategoryData.FormattingEnabled = true;
@@ -205,7 +206,6 @@
             this.CategoryData.Name = "CategoryData";
             this.CategoryData.Size = new System.Drawing.Size(261, 27);
             this.CategoryData.TabIndex = 25;
-            this.CategoryData.Text = "Select the category";
             // 
             // DescriptionData
             // 
@@ -386,6 +386,7 @@
             this.BookImageBox.Size = new System.Drawing.Size(243, 379);
             this.BookImageBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.BookImageBox.TabIndex = 2;
+            this.BookImageBox.Text = "Place for image";
             this.BookImageBox.TabStop = false;
             // 
             // InfoLabel

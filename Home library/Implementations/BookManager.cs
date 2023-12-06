@@ -7,14 +7,14 @@ namespace Home_library.Implementations;
 
 public class BookManager : IManager<Book>
 {
-    private const string FILENAME = "books.xml";
+    private const string Filepath = @"C:\Users\kopot\source\repos\Home library\Home library\Data\books.xml";
 
     public void Save(IList<Book> books)
     {
         var xmlWriterSettings = new XmlWriterSettings { Indent = true };
         var serializer = new XmlSerializer(typeof(List<Book>));
 
-        using var writer = XmlWriter.Create(FILENAME, xmlWriterSettings);
+        using var writer = XmlWriter.Create(Filepath, xmlWriterSettings);
         serializer.Serialize(writer, books);
     }
 
@@ -22,7 +22,7 @@ public class BookManager : IManager<Book>
     {
         var serializer = new XmlSerializer(typeof(List<Book>));
 
-        using var stream = File.OpenRead(FILENAME);
+        using var stream = File.OpenRead(Filepath);
         return (List<Book>)serializer.Deserialize(stream);
     }
 }

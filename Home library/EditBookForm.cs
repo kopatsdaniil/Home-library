@@ -9,6 +9,7 @@ public partial class EditBookForm : Form
     private readonly BookEditor _bookEditor;
     private readonly IManager<Book> _bookManager;
     private readonly IValidator<Book> _bookValidator;
+    private readonly Guid _id;
 
     public EditBookForm(IManager<Book> bookManager, IValidator<Book> bookValidator, BookEditor bookEditor)
     {
@@ -22,6 +23,7 @@ public partial class EditBookForm : Form
         _bookEditor = bookEditor;
 
         var selectedBook = _bookEditor.GetSelectedBook();
+        _id = selectedBook.Id;
 
         AuthorNameData.Text = selectedBook.AuthorName;
         AuthorSurnameData.Text = selectedBook.AuthorSurname;
@@ -54,13 +56,15 @@ public partial class EditBookForm : Form
             (BookGenre)GenreData.SelectedIndex, Guid.NewGuid());
 
         var books = _bookManager.Load();
-        var index = _bookEditor.GetIndex();
         var validationResult = _bookValidator.Validate(books, bookToEdit);
 
         MessageBox.Text = validationResult.Message;
         if (!validationResult.Success) return;
 
-        books[index] = bookToEdit;
+        var oldBook = books.First(x => x.Id == _id);
+        books.Insert(books.IndexOf(oldBook), bookToEdit);
+        books.Remove(oldBook);
+
         _bookManager.Save(books);
     }
 

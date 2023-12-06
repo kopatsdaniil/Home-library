@@ -15,6 +15,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="MakeListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="EditBookForm.cs">
       <SubType>Form</SubType>
     </Compile>

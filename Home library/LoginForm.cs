@@ -37,9 +37,9 @@ public partial class LoginForm : Form
     private void ResetUserInformation(string message)
     {
         TextMessage.Text = message;
-        TextPassword.Text = "Password";
-        TextUsername.Text = "Username";
-        TextPassword.PasswordChar = '\0';
+        TextPassword.Clear();
+        TextUsername.Clear();
+        SetVisibilityIcon(false);
     }
 
     private void LoginForm_Load(object sender, EventArgs e)
@@ -48,30 +48,11 @@ public partial class LoginForm : Form
 
     private void TextUsername_MouseClick(object sender, MouseEventArgs e)
     {
-        if (TextUsername.Text == "Username") TextUsername.Clear();
-
-        if (string.IsNullOrEmpty(TextPassword.Text))
-        {
-            TextPassword.Text = "Password";
-            TextPassword.PasswordChar = '\0';
-            SetVisibilityIcon(false);
-        }
+        SetVisibilityIcon(false);
     }
 
     private void TextPassword_MouseClick(object sender, MouseEventArgs e)
     {
-        if (TextPassword.Text == "Password")
-        {
-            TextPassword.Clear();
-            TextPassword.PasswordChar = '*';
-        }
-
-        if (string.IsNullOrEmpty(TextUsername.Text))
-        {
-            TextUsername.Text = "Username";
-            SetVisibilityIcon(true);
-        }
-
         SetVisibilityIcon(true);
     }
 
@@ -111,19 +92,19 @@ public partial class LoginForm : Form
         users.Add(newUser);
 
         _userManager.Save(users);
+
+        SetVisibilityIcon(false);
     }
 
     private void PasswordVisible_Click(object sender, EventArgs e)
     {
-        if (TextPassword.Text != "Password") TextPassword.PasswordChar = '*';
-
+        TextPassword.PasswordChar = '*';
         PasswordInvisible.BringToFront();
     }
 
     private void PasswordInvisible_Click(object sender, EventArgs e)
     {
-        if (TextPassword.Text != "Password") TextPassword.PasswordChar = '\0';
-
+        TextPassword.PasswordChar = '\0';
         PasswordVisible.BringToFront();
     }
 
