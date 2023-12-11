@@ -1,3 +1,4 @@
+using Home_library.Forms;
 using Home_library.Implementations;
 using Home_library.Interfaces;
 using Home_library.Models;
@@ -44,6 +45,8 @@ internal static class Program
                 services.AddTransient<AddBookForm>();
                 services.AddTransient<EditBookForm>();
                 services.AddTransient<MakeListForm>();
+                services.AddTransient<AdminForm>();
+                services.AddTransient<UserDashboardForm>();
             });
     }
 }

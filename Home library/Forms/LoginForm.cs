@@ -1,5 +1,7 @@
+using Home_library.Forms;
 using Home_library.Interfaces;
 using Home_library.Models;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Home_library;
 
@@ -7,8 +9,9 @@ public partial class LoginForm : Form
 {
     private readonly IManager<User> _userManager;
     private readonly IValidator<User> _userValidator;
+    private readonly IServiceProvider _provider;
 
-    public LoginForm(IManager<User> userManager, IValidator<User> userValidator)
+    public LoginForm(IManager<User> userManager, IValidator<User> userValidator, IServiceProvider provider)
     {
         InitializeComponent();
 
@@ -17,6 +20,7 @@ public partial class LoginForm : Form
 
         _userManager = userManager;
         _userValidator = userValidator;
+        _provider = provider;
     }
 
     private void SetVisibilityIcon(bool argument)
@@ -58,6 +62,7 @@ public partial class LoginForm : Form
 
     private void CloseButton_Click(object sender, EventArgs e)
     {
+        DialogResult = DialogResult.Cancel;
         Close();
     }
 
@@ -67,6 +72,12 @@ public partial class LoginForm : Form
         var password = TextPassword.Text;
 
         var users = _userManager.Load();
+
+        if (TextUsername.Text == "admin" && TextPassword.Text == "admin")
+        {
+            Hide();
+            _provider.GetRequiredService<AdminForm>().ShowDialog();
+        }
 
         foreach (var user in users)
             if (user.Username == username && user.Password == password)

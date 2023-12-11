@@ -53,7 +53,7 @@
             this.TitleLabel = new System.Windows.Forms.Label();
             this.AuthorSurnameLabel = new System.Windows.Forms.Label();
             this.AuthorNameLabel = new System.Windows.Forms.Label();
-            this.AddBookLabel = new System.Windows.Forms.Label();
+            this.EditBookLabel = new System.Windows.Forms.Label();
             this.BookImageBox = new System.Windows.Forms.PictureBox();
             this.InfoLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -98,7 +98,7 @@
             this.panel1.Controls.Add(this.TitleLabel);
             this.panel1.Controls.Add(this.AuthorSurnameLabel);
             this.panel1.Controls.Add(this.AuthorNameLabel);
-            this.panel1.Controls.Add(this.AddBookLabel);
+            this.panel1.Controls.Add(this.EditBookLabel);
             this.panel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel1.Location = new System.Drawing.Point(14, 16);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -367,15 +367,15 @@
             this.AuthorNameLabel.TabIndex = 1;
             this.AuthorNameLabel.Text = "Book author\'s name";
             // 
-            // AddBookLabel
+            // EditBookLabel
             // 
-            this.AddBookLabel.AutoSize = true;
-            this.AddBookLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.AddBookLabel.Location = new System.Drawing.Point(64, 17);
-            this.AddBookLabel.Name = "AddBookLabel";
-            this.AddBookLabel.Size = new System.Drawing.Size(107, 24);
-            this.AddBookLabel.TabIndex = 0;
-            this.AddBookLabel.Text = "Add a book";
+            this.EditBookLabel.AutoSize = true;
+            this.EditBookLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.EditBookLabel.Location = new System.Drawing.Point(64, 17);
+            this.EditBookLabel.Name = "EditBookLabel";
+            this.EditBookLabel.Size = new System.Drawing.Size(106, 24);
+            this.EditBookLabel.TabIndex = 0;
+            this.EditBookLabel.Text = "Edit a book";
             // 
             // BookImageBox
             // 
@@ -386,8 +386,8 @@
             this.BookImageBox.Size = new System.Drawing.Size(243, 379);
             this.BookImageBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.BookImageBox.TabIndex = 2;
-            this.BookImageBox.Text = "Place for image";
             this.BookImageBox.TabStop = false;
+            this.BookImageBox.Text = "Place for image";
             // 
             // InfoLabel
             // 
@@ -429,7 +429,7 @@
 
         private PictureBox pictureBox1;
         private Panel panel1;
-        private Label AddBookLabel;
+        private Label EditBookLabel;
         private Label GenreLabel;
         private Label CategoryLabel;
         private Label BookImgLabel;

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfUser xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <User>
+    <Username>admin</Username>
+    <Password>admin</Password>
+    <Id>c66ff635-786a-4918-993e-a96071e27040</Id>
+  </User>
+  <User>
+    <Username>test</Username>
+    <Password>test</Password>
+    <Id>fd844387-2f13-4a90-8351-3c947bf57901</Id>
+  </User>
+</ArrayOfUser>

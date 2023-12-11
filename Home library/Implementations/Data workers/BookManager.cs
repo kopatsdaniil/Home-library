@@ -7,7 +7,7 @@ namespace Home_library.Implementations;
 
 public class BookManager : IManager<Book>
 {
-    private const string Filepath = @"C:\Users\kopot\source\repos\Home library\Home library\Data\books.xml";
+    private const string Filepath = @"C:\Users\kopot\source\repos\Home library\Home library\Implementations\Data workers\Data\books.xml";
 
     public void Save(IList<Book> books)
     {
